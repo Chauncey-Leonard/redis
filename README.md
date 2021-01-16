@@ -17,7 +17,7 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 |      C#      |     Go      | Node.js | Pure Data | Smalltalk |
 |   Clojure    |   Haskell   |   Lua   |  Python   |    Tcl    |
 
-  
+
 
 ### 二、特点
 
@@ -62,4 +62,12 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 **Set**：字符串类型的无序集合，也不可重复
 
 **ZSet**：字符串类型的有序集合，也不可重复，有序集合中的每个元素都需要指定一个分数，根据分数对元素进行升序排序
+
+
+
+### 五、获取地址
+
+[Redis官网](https://redis.io)
+
+[Redis中文网](http://www.redis.cn)
 
