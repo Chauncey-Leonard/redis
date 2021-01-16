@@ -65,9 +65,29 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 
 
 
-### 五、获取地址
+### 五、下载地址
 
 [Redis官网](https://redis.io)
 
 [Redis中文网](http://www.redis.cn)
+
+注意：Windows版本的在[GitHub](https://github.com/redis/redis)上下载，推荐Redis都在Linux服务器上进行搭建。
+
+
+
+### 六、Windows
+
+1、下载安装包，地址：https://github.com/microsoftarchive/redis/releases
+
+2、下载得到压缩包
+
+3、解压缩到磁盘，Redis很小，只有5M
+
+4、双击`redis-server.exe`文件启动服务
+
+5、使用`redis-cli.exe`客户端连接redis
+
+
+
+### 七、Linux
 
