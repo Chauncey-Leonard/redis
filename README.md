@@ -20,7 +20,7 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 |   Clojure    |   Haskell   |   Lua   |  Python   |    Tcl    |
 
 
-​    
+  
 > Redis特点
 
 1.以内存作为数据存储的介质，读写数据的效率极高。
