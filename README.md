@@ -221,3 +221,22 @@ redis-benchmark [option] [option value]
 |  -**t**   |       仅运行以逗号分隔的测试命令列表       |           |
 |  **-I**   |   Idle 模式，仅打开 N 个 idle 连接并等待   |           |
 
+**案例**
+
+```bash
+# 测试100个并发连接，每个连接100000个请求
+redis-benchmark -h localhost -p 6379 -c 100 -n 100000
+
+# 结果
+====== SET ======
+  100000 request completed in 1.69 seconds # 10万个请求完成的总时间
+  100 parallel clients					   # 100个客户端
+  3 bytes payload						   # 每次写入3个字节
+  keep alive: 1							   # 只有一台服务器来处理这些请求，单机性能
+
+28.93% <= 1 milliseconds
+99.85% <= 2 milliseconds
+100.00% <= 3 milliseconds				   # 所有请求在3秒内完成
+59276.82 requests per second			   # 每秒处理的请求数
+```
+
