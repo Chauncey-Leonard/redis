@@ -160,8 +160,9 @@ daemonize yes
 #### 8、启动服务
 
 ```bash
-# 进入/usr/local/bin目录，启动redis-server，同时指定启动的配置文件
+# 进入/usr/local/bin目录
 cd /usr/local/bin
+# 使用指定配置文件启动服务
 redis-server config/redis-config
 ```
 
@@ -182,8 +183,9 @@ ps -ef|grep redis
 #### 11、关闭服务
 
 ```bash
-# 在redis-cli中输入
+# 在redis-cli中输入shutdown即可关闭服务
 shutdown
+# 退出redis-cli
 exit
 
 # 再次查看redis进程信息
@@ -258,6 +260,7 @@ keys *
 # 清空当前数据库
 flushdb
 # 清空全部数据库
+flushall
 ```
 
 #### 2、Redis是单线程的
@@ -273,3 +276,7 @@ Redis 是由C语言编写的，官方提供的数据是100000+的QPS，完全不
 误区2：多线程一定比单线程效率高
 
 Redis是将所有的数据全部放在内存中的，所以使用单线程去操作效率最高，如果是多线程的话，CPU在进行上下文切换的时候会增加耗时，对于内存系统来说，没有上下文的切换，效率就是最高的
+
+
+
+### 十、基本命令
