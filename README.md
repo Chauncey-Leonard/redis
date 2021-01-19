@@ -356,7 +356,9 @@ mget k1 k2 k3
 # msetnx 是一个原子性的操作,要么一起成功，要么一起失败
 msetnx k1 v1 k4 v4
 
-# ------------------------------------
-
+# --------------- 对象 ---------------
+# 常规实现
+# 设置一个user对象，值为json字符串
+set user {firstName: Chauncey, lastName: Leonard}
 ```
 
