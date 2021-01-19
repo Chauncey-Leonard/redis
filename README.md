@@ -360,5 +360,9 @@ msetnx k1 v1 k4 v4
 # 常规实现
 # 设置一个user对象，值为json字符串
 set user {firstName: Chauncey, lastName: Leonard}
+
+# 进阶实现
+mset user:1:name Chauncey user:1:age 18
+mget user:1:name user:1:age
 ```
 
