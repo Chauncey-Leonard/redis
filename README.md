@@ -400,10 +400,21 @@ lpop list
 # 移除list的最后一个元素
 rpop list
 
+# 移除列表中指定个数的值，精确匹配
+lrem list 1 one # 1表示移除的个数
+
 # --------------- 通过下标获取值 ---------------
 lindex list 0
 
 # --------------- 获取列表的长度 ---------------
 llen list
+
+# --------------- 截取 ---------------
+lpush list test1
+lpush list test2
+lpush list test3
+lpush list test4
+# 通过下标截取指定的长度，只剩下截取的元素
+ltrim list 1 2 # list: [test2,test3]
 ```
 
