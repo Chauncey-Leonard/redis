@@ -300,3 +300,44 @@ ttl name
 type name
 ```
 
+
+
+### 十一、String
+
+```bash
+# 给指定键设置值
+set name Chauncey
+# 获取指定key的值
+get name
+# 判断当前key是否存在
+exists name
+# 向指定key追加内容，如果不存在就相当于 set key
+append name Leonard
+# 查询key值的长度
+strlen name
+# 获取当前数据库的所有key
+keys *
+
+# ------------------------------------
+# 初始值为0
+set count 0
+# 加一
+incr count
+# 减一
+decr count
+# 添加指定步长
+incrby count 10
+# 减少指定步长
+decrby count 10
+
+# ------------------------------------
+# 字符串范围 range
+# 截取字符串[0,3]
+getrange name 0 3
+# 获取全部字符串
+getrange name 0 -1
+
+# 替换指定位置的字符串
+setrange name 0 Leonard
+```
+
