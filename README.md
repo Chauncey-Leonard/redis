@@ -364,5 +364,13 @@ set user {firstName: Chauncey, lastName: Leonard}
 # 进阶实现
 mset user:1:name Chauncey user:1:age 18
 mget user:1:name user:1:age
+
+# --------------- 组合命令 ---------------
+# 如果不存在值就返回nil，如果存在值先返回，同时重新赋值
+getset name Chauncey # nil
+get name # Chauncey
+
+getset name Leonard # Chauncey
+get name # Leonard
 ```
 
