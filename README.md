@@ -280,3 +280,23 @@ Redis是将所有的数据全部放在内存中的，所以使用单线程去操
 
 
 ### 十、基本命令
+
+```bash
+# 查看所有key
+keys *
+# set key
+set name Chauncey
+# get key
+get name
+# 判断当前key是否存在,1表示存在，0表示不存在
+EXISTS name
+# 移除当前key
+move name 1
+# 设置key的过期时间，单位是秒
+EXPIRE name 10
+# 查看当前key的剩余过期时间
+ttl name
+# 查看当前key的类型
+type name
+```
+
