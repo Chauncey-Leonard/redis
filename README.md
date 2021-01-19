@@ -374,3 +374,18 @@ getset name Leonard # Chauncey
 get name # Leonard
 ```
 
+### 十二、List
+
+基本的数据类型，列表，在Redis中，List可以用作栈、队列、阻塞队列。
+
+``` bash
+# 所有的list命令都是以l开头的
+# --------------- 基础命令 ---------------
+lpush list one # 将一个值或多个值插入列表的头部，返回值为列表的大小
+lpush list two
+lpush list three
+# 获取全部
+lrange list 0 -1
+lrange list 0 1 # "three" "two"
+```
+
