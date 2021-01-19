@@ -399,5 +399,8 @@ lrange list 0 -1 # "three" "two" "one" "right"
 lpop list
 # 移除list的最后一个元素
 rpop list
+
+# --------------- 通过下标获取值 ---------------
+lindex list 0
 ```
 
