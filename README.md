@@ -381,11 +381,17 @@ get name # Leonard
 ``` bash
 # 所有的list命令都是以l开头的
 # --------------- 基础命令 ---------------
-lpush list one # 将一个值或多个值插入列表的头部，返回值为列表的大小
+# 将一个值或多个值插入列表的头部，返回值为列表的大小
+lpush list one 
 lpush list two
 lpush list three
 # 获取全部
 lrange list 0 -1
-lrange list 0 1 # "three" "two"
+# "three" "two" 通过区间获取具体值
+lrange list 0 1 
+
+# 将一个或多个值插入列表的尾部
+rpush list right
+lrange list 0 -1 # "three" "two" "one" "right"
 ```
 
