@@ -379,8 +379,8 @@ get name # Leonard
 基本的数据类型，列表，在Redis中，List可以用作栈、队列、阻塞队列。
 
 ``` bash
-# 所有的list命令都是以l开头的
-# --------------- 基础命令 ---------------
+# 所有的list命令都是以l开头的，Redis不区分大小写
+# --------------- 添加 ---------------
 # 将一个值或多个值插入列表的头部，返回值为列表的大小
 lpush list one 
 lpush list two
@@ -393,5 +393,11 @@ lrange list 0 1
 # 将一个或多个值插入列表的尾部
 rpush list right
 lrange list 0 -1 # "three" "two" "one" "right"
+
+# --------------- 移除 ---------------
+# 移除list的第一个元素,返回值为移除的值
+lpop list
+# 移除list的最后一个元素
+rpop list
 ```
 
