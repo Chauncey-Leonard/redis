@@ -318,7 +318,7 @@ strlen name
 # 获取当前数据库的所有key
 keys *
 
-# ------------------------------------
+# --------------- 加减 ---------------
 # 初始值为0
 set count 0
 # 加一
@@ -330,14 +330,33 @@ incrby count 10
 # 减少指定步长
 decrby count 10
 
-# ------------------------------------
+# --------------- 截取字符串 ---------------
 # 字符串范围 range
 # 截取字符串[0,3]
 getrange name 0 3
 # 获取全部字符串
 getrange name 0 -1
-
 # 替换指定位置的字符串
 setrange name 0 Leonard
+
+# --------------- 过期时间 ---------------
+# setex(set with expire) 设置过期时间
+# setnx(set if not exist) 不存在设置(在分布式锁中经常使用)
+
+# 设置name的值为Chauncey，30秒后过期
+setex name 30 "Chauncey"
+# 如果firstName不存在，创建firstName,如果存在，则直接创建失败
+setnx firstName "Chauncey"
+
+# --------------- 批量操作 ---------------
+# 同时设置多个值
+mset k1 v1 k2 v2 k3 v3
+# 同时获取多个值
+mget k1 k2 k3
+# msetnx 是一个原子性的操作,要么一起成功，要么一起失败
+msetnx k1 v1 k4 v4
+
+# ------------------------------------
+
 ```
 
