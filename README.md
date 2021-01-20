@@ -425,5 +425,20 @@ rpush mylist hello2 # 3
 rpoplpush mylist myotherlist # hello2
 lrange mylist 0 -1 # hello hello1
 lrange myotherlist 0 -1 # hello2
+
+# --------------- lset ---------------
+# 将列表中指定下标的值替换为其他值
+# 判断一个列表是否存在
+exists list
+# 如果不存在，进行lset操作时会报错 ERR no such key
+lset list 0 item
+
+lpush list value1
+lrange list 0 0 # value1
+lset list 0 item # OK
+lrange list 0 0 # item
+
+# 如果列表存在，但是下标不存在也会报错 ERR index out of range
+lset list 1 other
 ```
 
