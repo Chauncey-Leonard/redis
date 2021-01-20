@@ -416,5 +416,14 @@ lpush list test3
 lpush list test4
 # 通过下标截取指定的长度，只剩下截取的元素
 ltrim list 1 2 # list: [test2,test3]
+
+# --------------- 进阶 ---------------
+# rpoplpush 移除列表的最后一个元素，并将其移动到新的列表中
+rpush mylist hello # 1
+rpush mylist hello1 # 2
+rpush mylist hello2 # 3
+rpoplpush mylist myotherlist # hello2
+lrange mylist 0 -1 # hello hello1
+lrange myotherlist 0 -1 # hello2
 ```
 
