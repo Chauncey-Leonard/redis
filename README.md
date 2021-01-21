@@ -440,5 +440,14 @@ lrange list 0 0 # item
 
 # 如果列表存在，但是下标不存在也会报错 ERR index out of range
 lset list 1 other
+
+# --------------- linsert ---------------
+rpush mylist hello
+rpush mylist world
+
+linsert mylist before "world" "other"
+lrange mylist 0 -1 # hello other world
+
+linsert mylist after world new # hello other world new
 ```
 
