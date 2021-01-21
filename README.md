@@ -485,5 +485,11 @@ srandmember myset 2
 
 # --------------- 随机删除key ---------------
 spop myset
+
+# --------------- 将指定的值，移动到另一个set ---------------
+sadd myset hello
+sadd myset2 world
+
+smove myset myset2 hello
 ```
 
