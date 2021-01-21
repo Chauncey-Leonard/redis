@@ -457,3 +457,20 @@ linsert mylist after world new # hello other world new
 - 在两边插入或改动值，效率最高，中间元素的操作，效率会相对低一点
 - 消息排队
 - 消息队列（lpush，rpop）,栈（lpush, lpop）
+
+
+
+### 十三、Set
+
+`Set`中的值是不能重复的
+
+```bash
+# --------------- set ---------------
+# 集合中添加元素
+sadd myset hello
+# 查看指定set的所有值
+smembers myset
+# 判断某一个值在set中是否存在
+sismembers myset hello
+```
+
