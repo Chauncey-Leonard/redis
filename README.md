@@ -491,5 +491,10 @@ sadd myset hello
 sadd myset2 world
 
 smove myset myset2 hello
+
+# --------------- 差集、交集、并集 ---------------
+sdiff key1 key2 # 差集
+sinter key1 key2 # 交集
+sunion key1 key2 # 并集
 ```
 
