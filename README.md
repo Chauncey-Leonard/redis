@@ -482,5 +482,8 @@ srem mset hello
 # --------------- 获取set集合中随机的元素 ---------------
 srandmember myset
 srandmember myset 2
+
+# --------------- 随机删除key ---------------
+spop myset
 ```
 
