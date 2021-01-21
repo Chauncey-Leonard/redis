@@ -472,5 +472,8 @@ sadd myset hello
 smembers myset
 # 判断某一个值在set中是否存在
 sismembers myset hello
+
+# --------------- 获取set集合中的元素个数 ---------------
+scard myset
 ```
 
