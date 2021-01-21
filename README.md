@@ -478,5 +478,9 @@ scard myset
 
 # --------------- 移除set集合中指定的元素 ---------------
 srem mset hello
+
+# --------------- 获取set集合中随机的元素 ---------------
+srandmember myset
+srandmember myset 2
 ```
 
