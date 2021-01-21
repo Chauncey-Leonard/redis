@@ -451,3 +451,9 @@ lrange mylist 0 -1 # hello other world
 linsert mylist after world new # hello other world new
 ```
 
+- `List`实际上是一个链表，before	Node	after，Left、Right都可以进行插入值
+- 如果key不存在，则会创建新的链表，如果key存在则新增内容
+- 如果移除了所有的值，也就是空链表，也就相当于不存在
+- 在两边插入或改动值，效率最高，中间元素的操作，效率会相对低一点
+- 消息排队
+- 消息队列（lpush，rpop）,栈（lpush, lpop）
