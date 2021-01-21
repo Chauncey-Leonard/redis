@@ -475,5 +475,8 @@ sismembers myset hello
 
 # --------------- 获取set集合中的元素个数 ---------------
 scard myset
+
+# --------------- 移除set集合中指定的元素 ---------------
+srem mset hello
 ```
 
