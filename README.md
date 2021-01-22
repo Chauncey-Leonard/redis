@@ -509,5 +509,8 @@ hset myhash name Chauncey
 
 # 获取指定key 属性的值
 hget myhash name
+
+# 批量添加key
+hmset myhash age 12 lastName Leonard
 ```
 
