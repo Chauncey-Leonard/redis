@@ -512,5 +512,8 @@ hget myhash name
 
 # 批量添加key
 hmset myhash age 12 lastName Leonard
+
+# 批量获取指定key field的值
+hmget myhash name age lastName
 ```
 
