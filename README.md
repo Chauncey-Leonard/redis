@@ -565,5 +565,11 @@ zadd salary 500 wangwu
 
 # 显示全部的用户从小到大排序
 zrangebyscore salary -inf +inf
+
+# 显示全部的用户从小到大排序并且附带分数
+zrangebyscore salary -inf +inf withscores
+
+# 指定值显示全部的用户从小到大排序并且附带分数
+zrangebyscore salary -inf 2500 withscores
 ```
 
