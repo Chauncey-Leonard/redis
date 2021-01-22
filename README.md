@@ -501,3 +501,10 @@ sunion key1 key2 # 并集
 ### 十四、Hash
 
 我们可以将Hash看作是一个`Map`集合，结构为：`key-map`，本质上和String类型没有太大的区别，还是一个简单的key-value。
+
+```bash
+# --------------- 基础命令 ---------------
+# 添加一个Hash类型的数据
+hset myhash name Chauncey
+```
+
