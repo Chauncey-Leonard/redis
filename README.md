@@ -500,7 +500,7 @@ sunion key1 key2 # 并集
 
 ### 十四、Hash
 
-我们可以将Hash看作是一个`Map`集合，结构为：`key-map`，本质上和String类型没有太大的区别，还是一个简单的key-value。
+我们可以将`Hash`看作是一个`Map`集合，结构为：`key-map`，本质上和`String`类型没有太大的区别，还是一个简单的`key-value`。
 
 ```bash
 # --------------- 基础命令 ---------------
@@ -515,5 +515,8 @@ hmset myhash age 12 lastName Leonard
 
 # 批量获取指定key field的值
 hmget myhash name age lastName
+
+# 获取指定key的全部field值
+hgetall myhash
 ```
 
