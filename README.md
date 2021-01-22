@@ -527,5 +527,8 @@ hlen myhash
 
 # 判断指定key中是否存在hash字段
 hexists myhash name
+
+# 获取指定key中的全部hash字段名
+hkeys myhash
 ```
 
