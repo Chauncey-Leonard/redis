@@ -533,5 +533,9 @@ hkeys myhash
 
 # 获取指定key中的全部hash字段值
 hvals myhash
+
+# 指定增量
+hset myhash field 5
+hincrby myhash field 1
 ```
 
