@@ -537,5 +537,8 @@ hvals myhash
 # 指定增量
 hset myhash field 5
 hincrby myhash field 1
+
+# 如果不存在，则可以设置
+hsetnx myhash field hello
 ```
 
