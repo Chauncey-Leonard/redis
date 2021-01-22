@@ -521,5 +521,8 @@ hgetall myhash
 
 # 删除指定key的field
 hdel myhash name
+
+# 获取指定key中存储的hash字段数
+hlen myhash
 ```
 
