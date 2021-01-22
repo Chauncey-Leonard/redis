@@ -506,5 +506,8 @@ sunion key1 key2 # 并集
 # --------------- 基础命令 ---------------
 # 添加一个Hash类型的数据
 hset myhash name Chauncey
+
+# 获取指定key 属性的值
+hget myhash name
 ```
 
