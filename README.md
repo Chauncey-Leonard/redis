@@ -555,5 +555,7 @@ zadd myzset 1 one
 # 批量添加值
 zadd myzset 2 two 3 three
 
+# 查看指定key的值
+zrange myzset 0 -1
 ```
 
