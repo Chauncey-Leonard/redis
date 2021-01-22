@@ -564,6 +564,6 @@ zadd salary 5000 lisi
 zadd salary 500 wangwu
 
 # 显示全部的用户从小到大排序
-
+zrangebyscore salary -inf +inf
 ```
 
