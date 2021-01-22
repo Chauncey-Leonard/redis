@@ -542,3 +542,4 @@ hincrby myhash field 1
 hsetnx myhash field hello
 ```
 
+Hash更适合于对象的存储
