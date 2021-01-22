@@ -524,5 +524,8 @@ hdel myhash name
 
 # 获取指定key中存储的hash字段数
 hlen myhash
+
+# 判断指定key中是否存在hash字段
+hexists myhash name
 ```
 
