@@ -551,5 +551,9 @@ Hash更适合于对象的存储
 ```bash
 # 添加zset值
 zadd myzset 1 one
+
+# 批量添加值
+zadd myzset 2 two 3 three
+
 ```
 
