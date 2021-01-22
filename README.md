@@ -518,5 +518,8 @@ hmget myhash name age lastName
 
 # 获取指定key的全部field值
 hgetall myhash
+
+# 删除指定key的field
+hdel myhash name
 ```
 
