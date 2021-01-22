@@ -543,3 +543,13 @@ hsetnx myhash field hello
 ```
 
 Hash更适合于对象的存储
+
+### 十五、Zset
+
+在set的基础上增加了一个值，用于排序
+
+```bash
+# 添加zset值
+zadd myzset 1 one
+```
+
