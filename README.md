@@ -557,5 +557,13 @@ zadd myzset 2 two 3 three
 
 # 查看指定key的值
 zrange myzset 0 -1
+
+# 排序的实现
+zadd salary 2500 zhangsan # 添加三个用户
+zadd salary 5000 lisi
+zadd salary 500 wangwu
+
+# 显示全部的用户从小到大排序
+
 ```
 
