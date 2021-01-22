@@ -530,5 +530,8 @@ hexists myhash name
 
 # 获取指定key中的全部hash字段名
 hkeys myhash
+
+# 获取指定key中的全部hash字段值
+hvals myhash
 ```
 
