@@ -591,6 +591,10 @@ zcount salary 1 2
 
 ```bash
 # 添加地理位置
-geoadd city 116.23128 40.22077 beijing
+# 规则：两极无法直接添加，一般我们会直接下载城市数据，通过Java程序一次性导入
+# 参数：纬度 经度 名称
+geoadd city 40.22077 116.23128 beijing
+
+# 
 ```
 
