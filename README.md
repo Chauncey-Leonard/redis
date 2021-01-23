@@ -574,5 +574,8 @@ zrangebyscore salary -inf 2500 withscores
 
 # 移除Zset中的指定元素
 zrem salary zhangsan
+
+# 获取有序集合中的元素个数
+zcard salary
 ```
 
