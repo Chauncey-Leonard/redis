@@ -620,7 +620,7 @@ georadius city 110 30 1000 km withdist
 georadius city 110 30 1000 km withcoord
 ```
 
-#### 2.hyperloglogs
+#### 2.hyperloglog
 
 > 什么是基数？即不重复的元素
 
@@ -655,7 +655,7 @@ pfcount mykey
 pfmerge mykey3 mykey mykey2
 ```
 
-#### 3.bitmaps
+#### 3.bitmap
 
 > bitmap，使用操作二进制位来进行记录，只有0和1两种状态
 
