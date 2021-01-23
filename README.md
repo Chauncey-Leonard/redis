@@ -668,5 +668,8 @@ setbit sign 2 1
 
 # 查看某一个下标的值
 getbit sign 0
+
+# 统计指定key中1的值
+bitcount sign
 ```
 
