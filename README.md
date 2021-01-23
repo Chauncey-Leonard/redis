@@ -585,3 +585,12 @@ zcard salary
 zcount salary 1 2
 ```
 
+### 十六、特殊数据类型
+
+#### 1.geospatial
+
+```bash
+# 添加地理位置
+geoadd city 116.23128 40.22077 beijing
+```
+
