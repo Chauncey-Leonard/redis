@@ -650,6 +650,9 @@ pfadd mykey a b c d f g h i j
 
 # 统计指定key的基数数量
 pfcount mykey
+
+# 合并两组元素到新key中
+pfmerge mykey3 mykey mykey2
 ```
 
 
