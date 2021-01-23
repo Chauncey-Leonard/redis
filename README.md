@@ -609,5 +609,8 @@ geopos city beijing chengdu
 #	ft：英尺
 geodist city beijing chengdu
 geodist city beijing chengdu km
+
+# 以某个经纬度为中心，获取指定半径内的地理信息
+georadius city 110 30 1000 km
 ```
 
