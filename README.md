@@ -615,5 +615,8 @@ georadius city 110 30 1000 km
 
 # 显示到中心经纬度的距离
 georadius city 110 30 1000 km withdist
+
+# 以某个经纬度为中心，获取指定半径内的经纬度
+georadius city 110 30 1000 km withcoord
 ```
 
