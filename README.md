@@ -600,5 +600,14 @@ geoadd city 30.65984 104.10194 chengdu
 
 # 获取指定城市的经纬度,结果一定是一个坐标值
 geopos city beijing chengdu
+
+# 两个地点之间的距离
+# 单位：
+# 	m：米
+#	km：千米
+#	mi：英里
+#	ft：英尺
+geodist city beijing chengdu
+geodist city beijing chengdu km
 ```
 
