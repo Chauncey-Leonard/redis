@@ -665,5 +665,8 @@ setbit sign 0 1
 setbit sign 1 0
 setbit sign 2 1
 ...
+
+# 查看某一个下标的值
+getbit sign 0
 ```
 
