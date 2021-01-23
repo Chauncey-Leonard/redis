@@ -673,3 +673,8 @@ getbit sign 0
 bitcount sign
 ```
 
+### 十七、事务
+
+本质：一组命令的集合
+
+`Redis`单条命令是保证原子性的，但是`Redis`事务不保证原子性
