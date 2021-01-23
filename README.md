@@ -596,7 +596,9 @@ zcount salary 1 2
 # 经度：-180 ~ 180
 # 纬度：-85.05112878 ~ 85.05112878
 geoadd city 40.22077 116.23128 beijing
+geoadd city 30.65984 104.10194 chengdu
 
-# 
+# 获取指定城市的经纬度,结果一定是一个坐标值
+geopos city beijing chengdu
 ```
 
