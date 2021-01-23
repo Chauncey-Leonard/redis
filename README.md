@@ -572,6 +572,9 @@ zrangebyscore salary -inf +inf withscores
 # 指定值显示全部的用户从小到大排序并且附带分数
 zrangebyscore salary -inf 2500 withscores
 
+# 从大到小进行排序
+zrevrange salary 0 -1
+
 # 移除Zset中的指定元素
 zrem salary zhangsan
 
