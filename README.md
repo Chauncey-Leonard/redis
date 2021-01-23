@@ -647,6 +647,9 @@ B { 1, 3, 5, 7, 8 }
 ```bash
 # 创建第一组元素
 pfadd mykey a b c d f g h i j 
+
+# 统计指定key的基数数量
+pfcount mykey
 ```
 
 
