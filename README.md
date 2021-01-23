@@ -655,6 +655,15 @@ pfcount mykey
 pfmerge mykey3 mykey mykey2
 ```
 
-
-
 #### 3.bitmaps
+
+> bitmap，使用操作二进制位来进行记录，只有0和1两种状态
+
+```bash
+# 使用bitmap来记录值
+setbit sign 0 1
+setbit sign 1 0
+setbit sign 2 1
+...
+```
+
