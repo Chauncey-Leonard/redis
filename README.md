@@ -580,5 +580,8 @@ zrem salary zhangsan
 
 # 获取有序集合中的元素个数
 zcard salary
+
+# 获取指定区间的成员数量
+zcount salary 1 2
 ```
 
