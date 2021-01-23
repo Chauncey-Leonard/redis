@@ -620,3 +620,18 @@ georadius city 110 30 1000 km withdist
 georadius city 110 30 1000 km withcoord
 ```
 
+#### 2.hyperloglogs
+
+> 什么是基数？即不重复的元素
+
+A { 1, 3, 5, 7, 8, 7 }
+
+B { 1, 3, 5, 7, 8 }
+
+基数 = 5，可以接受误差
+
+> hyperloglog
+
+`Redis 2.8.9` 版本就更新了`hyperloglog`数据结构，适用于基数统计的算法
+
+#### 3.bitmaps
