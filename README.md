@@ -2,11 +2,10 @@
 
 ### 一、概述
 
-Redis（Remote Dictionary Server），即远程字典服务。 是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、key-value数据库，并提供多种语言的API，免费开源，是当下最热门的NoSQL技术之一，也被称之为结构化数据库，支持多种数据类型，如String、list、set、zset、hash
+Redis（Remote Dictionary Server），即远程字典服务。 是一个开源的使用ANSI
+C语言编写、支持网络、可基于内存亦可持久化的日志型、key-value数据库，并提供多种语言的API，免费开源，是当下最热门的NoSQL技术之一，也被称之为结构化数据库，支持多种数据类型，如String、list、set、zset、hash
 
 Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了**master-slave**（主从）同步。
-
-
 
 **支持的语言**
 
@@ -16,8 +15,6 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 |     C++      |   Erlang    |  Java   |    PHP    |   Scala   |
 |      C#      |     Go      | Node.js | Pure Data | Smalltalk |
 |   Clojure    |   Haskell   |   Lua   |  Python   |    Tcl    |
-
-
 
 ### 二、特点
 
@@ -30,8 +27,6 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 4.可以从磁盘中重新将数据加载到内存中，也可以通过配置文件对其进行配置，因此，redis才能实现持久化。
 
 5.支持主从模式，可以配置集群，更利于支撑大型项目。
-
-
 
 ### 三、应用场景
 
@@ -47,8 +42,6 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 
 ...
 
-
-
 ### 四、数据类型
 
 一共支持**五种**数据类型：String(字符串)、hash(哈希)、list(列表)、set(集合)、zset(有序集合)
@@ -63,8 +56,6 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 
 **ZSet**：字符串类型的有序集合，也不可重复，有序集合中的每个元素都需要指定一个分数，根据分数对元素进行升序排序
 
-
-
 ### 五、下载地址
 
 [Redis官网](https://redis.io)
@@ -72,8 +63,6 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 [Redis中文网](http://www.redis.cn)
 
 注意：Windows版本的在[GitHub](https://github.com/redis/redis)上下载，推荐Redis都在Linux服务器上进行搭建。
-
-
 
 ### 六、Windows
 
@@ -88,8 +77,6 @@ Redis可以周期性的把更新的数据写入磁盘或者把修改操作写入
 5、使用`redis-cli.exe`客户端连接redis
 
 注意：Windows下使用简单，但是Redis推荐我们使用**Linux**部署
-
-
 
 ### 七、Linux
 
@@ -192,8 +179,6 @@ exit
 ps -ef|grep redis
 ```
 
-
-
 ### 八、性能测试
 
 `redis-benchmark`是一个官方自带的性能测试工具
@@ -203,8 +188,6 @@ ps -ef|grep redis
 ```bash
 redis-benchmark [option] [option value]
 ```
-
-
 
 |   选项    |                    描述                    |  默认值   |
 | :-------: | :----------------------------------------: | :-------: |
@@ -242,8 +225,6 @@ redis-benchmark -h localhost -p 6379 -c 100 -n 100000
 59276.82 requests per second			   # 每秒处理的请求数
 ```
 
-
-
 ### 九、基础知识
 
 #### 1、默认有16个数据库
@@ -265,7 +246,7 @@ flushall
 
 #### 2、Redis是单线程的
 
-Redis是基于内存操作的，CPU不是Redis的瓶颈，而是根据服务器的内存和网络的带宽决定的，既然可以使用单线程来实现，就直接使用单线程了 
+Redis是基于内存操作的，CPU不是Redis的瓶颈，而是根据服务器的内存和网络的带宽决定的，既然可以使用单线程来实现，就直接使用单线程了
 
 Redis 是由C语言编写的，官方提供的数据是100000+的QPS，完全不比同样使用key-value的Memcache差
 
@@ -276,8 +257,6 @@ Redis 是由C语言编写的，官方提供的数据是100000+的QPS，完全不
 误区2：多线程一定比单线程效率高
 
 Redis是将所有的数据全部放在内存中的，所以使用单线程去操作效率最高，如果是多线程的话，CPU在进行上下文切换的时候会增加耗时，对于内存系统来说，没有上下文的切换，效率就是最高的
-
-
 
 ### 十、基本命令
 
@@ -299,8 +278,6 @@ ttl name
 # 查看当前key的类型
 type name
 ```
-
-
 
 ### 十一、String
 
@@ -451,14 +428,12 @@ lrange mylist 0 -1 # hello other world
 linsert mylist after world new # hello other world new
 ```
 
-- `List`实际上是一个链表，before	Node	after，Left、Right都可以进行插入值
+- `List`实际上是一个链表，before Node after，Left、Right都可以进行插入值
 - 如果key不存在，则会创建新的链表，如果key存在则新增内容
 - 如果移除了所有的值，也就是空链表，也就相当于不存在
 - 在两边插入或改动值，效率最高，中间元素的操作，效率会相对低一点
 - 消息排队
 - 消息队列（lpush，rpop）,栈（lpush, lpop）
-
-
 
 ### 十三、Set
 
@@ -632,15 +607,14 @@ B { 1, 3, 5, 7, 8 }
 
 > hyperloglog
 
-`Redis 2.8.9` 版本就更新了`hyperloglog`数据结构，适用于基数统计的算法，优点：占用的内存是固定的，2^64的不同元素的计数，只需要占用12kb内存，如果是从内存角度来比较的话，hyperloglog就是我们的首选。
+`Redis 2.8.9` 版本就更新了`hyperloglog`
+数据结构，适用于基数统计的算法，优点：占用的内存是固定的，2^64的不同元素的计数，只需要占用12kb内存，如果是从内存角度来比较的话，hyperloglog就是我们的首选。
 
 **案例：网页的UV（一个人访问多次，但还是算作一个人）**
 
 传统解决方案：
 
 使用set保存用户的Id，然后可以统计set中的元素个数作为标准判断，这种方式如果保存了大量的用户Id，就会比较麻烦，我们最终的目的只是计数，而不是保存用户Id
-
-
 
 使用hyperloglog也可以解决这个问题，并且错误率只有0.81%，在UV统计中可以忽略不计
 
@@ -728,3 +702,24 @@ watch money # 获取最新的值就可以
 ### 十八、Jedis
 
 `Jedis`是`Redis`官方推荐的Java连接开发工具
+
+1、导入对应的依赖
+
+```xml
+
+<depencencies>
+    <!-- fastjson -->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.75</version>
+    </dependency>
+
+    <!-- jedis -->
+    <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>3.5.0</version>
+    </dependency>
+</depencencies>
+```
