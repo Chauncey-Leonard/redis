@@ -684,3 +684,4 @@ bitcount sign
 - 开启事务（ multi ）
 - 命令入队（ ... ）
 - 执行事务（ exec ）
+- 取消事务（ discard ）
