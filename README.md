@@ -725,3 +725,6 @@ unwatch # 如果发现事务执行失败，就先解锁
 watch money # 获取最新的值就可以
 ```
 
+### 十八、Jedis
+
+`Jedis`是`Redis`官方推荐的Java连接开发工具
