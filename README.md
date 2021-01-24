@@ -723,3 +723,9 @@ watch money # 获取最新的值就可以
     </dependency>
 </depencencies>
 ```
+
+2、编码测试
+
+-   连接数据库
+-   操作数据库
+-   断开连接
