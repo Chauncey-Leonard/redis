@@ -2,6 +2,9 @@ package com.example.redis.utils;
 
 import redis.clients.jedis.Jedis;
 
+/**
+ * Jedis 基础API
+ */
 public class TestKey {
     public static void main(String[] args) {
         // 1、创建Jedis对象
