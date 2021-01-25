@@ -24,5 +24,9 @@ public class TestString {
 
         // 修改
         // System.out.println(jedis.set("lastName", "Tang"));
+
+        // 在fullName值后追加值
+        System.out.println(jedis.append("fullName", "appendValue"));
+        System.out.println(jedis.get("fullName"));
     }
 }
