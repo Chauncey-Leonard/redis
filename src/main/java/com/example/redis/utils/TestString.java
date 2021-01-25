@@ -20,6 +20,9 @@ public class TestString {
         // System.out.println(jedis.del("key1"));
 
         // 获取键的值
-        System.out.println(jedis.get("firstName"));
+        // System.out.println(jedis.get("firstName"));
+
+        // 修改
+        // System.out.println(jedis.set("lastName", "Tang"));
     }
 }
