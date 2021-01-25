@@ -3,6 +3,8 @@ package com.example.redis.utils;
 import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * String
  */
@@ -36,6 +38,22 @@ public class TestString {
         // System.out.println(jedis.mget("key1", "key2"));
 
         // 删除多个键值对
-        System.out.println(jedis.del("key1", "key2"));
+        // System.out.println(jedis.del("key1", "key2"));
+
+        // ======================= 新增防止覆盖原先值 =============================
+        // System.out.println(jedis.setnx("key3", "value3")); // 1
+        // System.out.println(jedis.setnx("key3", "value3")); // 0
+
+        // ====================== 新增键值对并设置有效时间 =========================
+        System.out.println(jedis.setex("key4", 5, "value4"));
+        System.out.println(jedis.get("key4"));
+
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(jedis.get("key4")); // null
     }
 }
