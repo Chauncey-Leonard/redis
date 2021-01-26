@@ -14,6 +14,8 @@ public class TestHash {
 
         // 获取hash 属性的值
         System.out.println(jedis.hget("fullName", "firstName"));
+
+        // 获取指定键的全部属性值
         System.out.println(jedis.hgetAll("fullName"));
 
         // 删除
