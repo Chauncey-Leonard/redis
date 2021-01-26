@@ -37,5 +37,9 @@ public class TestSet {
         // 将一个集合中的指定元素移至另一个集合中
         System.out.println(jedis.smove("key1", "key4", "a"));
         System.out.println(jedis.smembers("key4"));
+
+        // 随机移除一个或多个元素
+        System.out.println(jedis.spop("key1"));
+        System.out.println(jedis.smembers("key1"));
     }
 }
