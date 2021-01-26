@@ -23,5 +23,8 @@ public class TestHash {
 
         // 是否存在
         System.out.println(jedis.hexists("fullName", "lastName"));
+
+        // 获取指定键的所有键
+        System.out.println(jedis.hkeys("fullName"));
     }
 }
