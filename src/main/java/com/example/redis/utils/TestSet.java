@@ -11,5 +11,17 @@ public class TestSet {
         System.out.println(jedis.sadd("myset", "Hello")); // 1
         System.out.println(jedis.sadd("myset", "World")); // 1
         System.out.println(jedis.sadd("myset", "World")); // 0
+
+        // 获取set中的成员数量
+        System.out.println(jedis.scard("myset")); // 2
+
+        // 获取第一个集合与其他多个集合的差集
+        System.out.println(jedis.sadd("key1", "a"));
+        System.out.println(jedis.sadd("key1", "b"));
+        System.out.println(jedis.sadd("key1", "c"));
+        System.out.println(jedis.sadd("key2", "c"));
+        System.out.println(jedis.sadd("key2", "d"));
+        System.out.println(jedis.sadd("key2", "e"));
+        System.out.println(jedis.sdiff("key1", "key2"));
     }
 }
