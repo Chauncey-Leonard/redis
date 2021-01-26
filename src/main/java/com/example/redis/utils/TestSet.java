@@ -45,5 +45,8 @@ public class TestSet {
         // 随机获取一个或多个元素
         System.out.println(jedis.srandmember("key2"));
         System.out.println(jedis.srandmember("key2", 2));
+
+        // 从指定键中移除元素
+        System.out.println(jedis.srem("key2", "c"));
     }
 }
