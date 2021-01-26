@@ -42,5 +42,8 @@ public class TestHash {
 
         // 批量获取属性值
         System.out.println(jedis.hmget("myHash", "field1", "field2"));
+
+        // 获取指定键的全部属性值
+        System.out.println(jedis.hvals("myHash"));
     }
 }
