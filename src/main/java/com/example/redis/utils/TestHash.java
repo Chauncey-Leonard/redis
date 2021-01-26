@@ -26,5 +26,7 @@ public class TestHash {
 
         // 获取指定键的所有键
         System.out.println(jedis.hkeys("fullName"));
+        // 获取指定键的属性数量
+        System.out.println(jedis.hlen("fullName"));
     }
 }
