@@ -11,6 +11,8 @@ public class TestHash {
         // 新增
         System.out.println(jedis.hset("fullName", "firstName", "Chauncey"));
         System.out.println(jedis.hset("fullName", "lastName", "Leonard"));
+
+        // 获取hash 属性的值
         System.out.println(jedis.hget("fullName", "firstName"));
         System.out.println(jedis.hgetAll("fullName"));
 
