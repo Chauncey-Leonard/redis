@@ -33,5 +33,9 @@ public class TestSet {
 
         // 获取一个集合中的全部成员
         System.out.println(jedis.smembers("key1"));
+
+        // 将一个集合中的指定元素移至另一个集合中
+        System.out.println(jedis.smove("key1", "key4", "a"));
+        System.out.println(jedis.smembers("key4"));
     }
 }
