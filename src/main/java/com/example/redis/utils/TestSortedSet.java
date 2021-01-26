@@ -11,5 +11,8 @@ public class TestSortedSet {
         System.out.println(jedis.zadd("myzset", 1, "one"));
         System.out.println(jedis.zadd("myzset", 1, "uno"));
         System.out.println(jedis.zadd("myzset", 2, "two"));
+
+        // 获取集合中的元素数量
+        System.out.println(jedis.zcard("myzset"));
     }
 }
