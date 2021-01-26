@@ -41,5 +41,9 @@ public class TestSet {
         // 随机移除一个或多个元素
         System.out.println(jedis.spop("key1"));
         System.out.println(jedis.smembers("key1"));
+
+        // 随机获取一个或多个元素
+        System.out.println(jedis.srandmember("key2"));
+        System.out.println(jedis.srandmember("key2", 2));
     }
 }
