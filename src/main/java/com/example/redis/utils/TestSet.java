@@ -23,5 +23,9 @@ public class TestSet {
         System.out.println(jedis.sadd("key2", "d"));
         System.out.println(jedis.sadd("key2", "e"));
         System.out.println(jedis.sdiff("key1", "key2"));
+
+        // 获取所有给定集合的交集所得的集合成员
+        System.out.println(jedis.sadd("key3", "c"));
+        System.out.println(jedis.sinter("key1", "key2", "key3"));
     }
 }
