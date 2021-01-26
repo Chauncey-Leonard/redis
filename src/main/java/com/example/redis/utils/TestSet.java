@@ -27,5 +27,11 @@ public class TestSet {
         // 获取所有给定集合的交集所得的集合成员
         System.out.println(jedis.sadd("key3", "c"));
         System.out.println(jedis.sinter("key1", "key2", "key3"));
+
+        // 判断member是否是指定key的成员
+        System.out.println(jedis.sismember("key1", "a")); // true
+
+        // 获取一个集合中的全部成员
+        System.out.println(jedis.smembers("key1"));
     }
 }
