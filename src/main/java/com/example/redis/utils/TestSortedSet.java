@@ -19,5 +19,12 @@ public class TestSortedSet {
         // 获取集合中指定区间的元素个数
         System.out.println(jedis.zcount("myzset", "-inf", "+inf"));
         System.out.println(jedis.zcount("myzset", "(1", "3"));
+
+        System.out.println(jedis.zadd("zset1", 1, "one"));
+        System.out.println(jedis.zadd("zset1", 2, "two"));
+        System.out.println(jedis.zadd("zset1", 3, "three"));
+        System.out.println(jedis.zadd("zset2", 1, "one"));
+        System.out.println(jedis.zadd("zset2", 2, "two"));
+        System.out.println(jedis.zrangeWithScores("zset1", 1, 3));
     }
 }
