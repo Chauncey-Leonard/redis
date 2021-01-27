@@ -1,4 +1,4 @@
-package com.example.redis.test;
+package com.example.redis;
 
 import com.alibaba.fastjson.JSONObject;
 import redis.clients.jedis.Jedis;

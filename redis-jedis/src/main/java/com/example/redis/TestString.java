@@ -1,6 +1,5 @@
-package com.example.redis.test;
+package com.example.redis;
 
-import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 
 import java.util.concurrent.TimeUnit;
@@ -8,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * String
  */
-@Slf4j
 public class TestString {
     public static void main(String[] args) {
         Jedis jedis = new Jedis("127.0.0.1", 6379);
