@@ -729,3 +729,31 @@ watch money # 获取最新的值就可以
 -   连接数据库
 -   操作数据库
 -   断开连接
+
+### 十九、SpringBoot-Redis
+
+`Spring Boot`所有的配置类，都有一个自动配置类 `RedisAutoConfiguration`
+
+自动配置类都会绑定一个`properties`配置文件  `RedisProperties`
+
+```java
+	@Bean
+	// 当这个对象不存在时生效，即我们可以使用自定义的template替换
+	@ConditionalOnMissingBean(name = "redisTemplate") 
+	@ConditionalOnSingleCandidate(RedisConnectionFactory.class)
+	public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+		RedisTemplate<Object, Object> template = new RedisTemplate<>();
+		template.setConnectionFactory(redisConnectionFactory);
+		return template;
+	}
+
+	@Bean
+	@ConditionalOnMissingBean
+	@ConditionalOnSingleCandidate(RedisConnectionFactory.class)
+	public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+		StringRedisTemplate template = new StringRedisTemplate();
+		template.setConnectionFactory(redisConnectionFactory);
+		return template;
+	}
+```
+
