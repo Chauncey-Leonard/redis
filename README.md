@@ -760,3 +760,64 @@ watch money # 获取最新的值就可以
 	}
 ```
 
+1.导入依赖
+
+```xml
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+```
+
+2.配置连接
+
+```yml
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+```
+
+3.测试
+
+```java
+@SpringBootTest
+class SpringbootRedisApplicationTests {
+
+    @Autowired
+    private RedisTemplate<String, String> redisTemplate;
+
+    @Test
+    void contextLoads() {
+    }
+
+    @Test
+    void redisTemplateTest() {
+        /*
+         * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         *
+         * redisTemplate 操作不同的数据类型
+         * opsForValue String
+         * opsForList
+         * opsForHash
+         * opsForSet
+         * opsForZSet
+         * opsForGeo
+         * opsForHyperLogLog
+         *
+         * 除了基本的数据类型操作，其他常用的方法都可以通过redisTemplate直接操作
+         * 比如，事务、和基本的CRUD
+         *
+         * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         */
+
+        RedisConnection connection = Objects.requireNonNull(
+                redisTemplate.getConnectionFactory()).getConnection();
+        connection.flushDb();
+        connection.flushAll();
+    }
+
+}
+```
+
