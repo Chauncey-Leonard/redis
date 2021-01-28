@@ -821,3 +821,4 @@ class SpringbootRedisApplicationTests {
 }
 ```
 
+`Redis`默认的序列化方式是`JDK`，所以在序列化的时候会进行转义，因此我们可能会使用`JSON`来进行序列化
