@@ -738,11 +738,14 @@ watch money # 获取最新的值就可以
 
 ```java
 	@Bean
-	// 当这个对象不存在时生效，即我们可以使用自定义的template替换
+	// 当这个对象不存在时生效，即我们可以使用自定义的 template 替换
 	@ConditionalOnMissingBean(name = "redisTemplate") 
 	@ConditionalOnSingleCandidate(RedisConnectionFactory.class)
 	public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
-		RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        // 默认的 template 没有过多的设置
+        // redis 中的对象都是需要序列化的
+        // 两个泛型都是 Object 类型的，所以我们在使用的时候需要进行强转
+        RedisTemplate<Object, Object> template = new RedisTemplate<>();
 		template.setConnectionFactory(redisConnectionFactory);
 		return template;
 	}
