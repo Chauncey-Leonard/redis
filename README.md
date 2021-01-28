@@ -751,7 +751,7 @@ watch money # 获取最新的值就可以
 	}
 
 	@Bean
-	@ConditionalOnMissingBean
+	@ConditionalOnMissingBean // String 是 Redis 中最常使用的类型，因此单独提出一个 Bean
 	@ConditionalOnSingleCandidate(RedisConnectionFactory.class)
 	public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
 		StringRedisTemplate template = new StringRedisTemplate();
