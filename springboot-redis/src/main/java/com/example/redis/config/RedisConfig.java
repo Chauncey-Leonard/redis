@@ -18,6 +18,7 @@ public class RedisConfig {
     @SuppressWarnings("all")
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
+
         // JSON序列化
         Jackson2JsonRedisSerializer<Object> jsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper objectMapper = new ObjectMapper();
@@ -25,6 +26,7 @@ public class RedisConfig {
         objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         jsonRedisSerializer.setObjectMapper(objectMapper);
         StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+
         // Key采用String的序列化方式
         template.setKeySerializer(stringRedisSerializer);
         template.setHashKeySerializer(stringRedisSerializer);
@@ -33,6 +35,7 @@ public class RedisConfig {
         template.setValueSerializer(jsonRedisSerializer);
         template.setHashKeySerializer(jsonRedisSerializer);
 
+        template.afterPropertiesSet();
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
