@@ -82,4 +82,16 @@ public class RedisUtil {
         }
     }
 
+    // ================================= String ================================
+
+    /**
+     * 获取字符串类型的缓存
+     *
+     * @param key 键
+     * @return 值
+     */
+    public Object get(String key) {
+        return key == null ? null : redisTemplate.opsForValue().get(key);
+    }
+
 }
