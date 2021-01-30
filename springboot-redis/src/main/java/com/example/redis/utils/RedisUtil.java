@@ -134,4 +134,44 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 递增
+     *
+     * @param key 键
+     * @return 修改后的值
+     */
+    public Long increment(String key) {
+        return redisTemplate.opsForValue().increment(key);
+    }
+
+    /**
+     * 递增
+     *
+     * @param key   键
+     * @param delta 增加的值
+     * @return 修改后的值
+     */
+    public Long increment(String key, long delta) {
+        if (delta < 0) {
+            throw new RuntimeException("递增因子必须大于0");
+        }
+
+        return redisTemplate.opsForValue().increment(key, delta);
+    }
+
+    /**
+     * 递增
+     *
+     * @param key   键
+     * @param delta 增加的值
+     * @return 修改后的值
+     */
+    public Double increment(String key, double delta) {
+        if (delta < 0) {
+            throw new RuntimeException("递增因子必须大于0");
+        }
+
+        return redisTemplate.opsForValue().increment(key, delta);
+    }
+
 }
