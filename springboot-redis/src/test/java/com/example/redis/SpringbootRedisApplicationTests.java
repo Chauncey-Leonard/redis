@@ -12,7 +12,7 @@ import java.util.Objects;
 class SpringbootRedisApplicationTests {
 
     @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Test
     void contextLoads() {
