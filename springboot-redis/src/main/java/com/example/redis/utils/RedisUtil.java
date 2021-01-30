@@ -111,4 +111,27 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 字符串类型缓存存储并设置过期时间
+     * 如果设置的过期时间小于等于0，则表示永不过期
+     *
+     * @param key   键
+     * @param value 值
+     * @param time  过期时间，单位：秒
+     * @return true成功，false失败
+     */
+    public boolean setEx(String key, Object value, long time) {
+        try {
+            if (time > 0) {
+                redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
+            } else {
+                set(key, value);
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
