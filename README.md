@@ -822,3 +822,40 @@ class SpringbootRedisApplicationTests {
 ```
 
 `Redis`默认的序列化方式是`JDK`，所以在序列化的时候会进行转义，因此我们可能会使用`JSON`来进行序列化
+
+自定义`RedisConfig`
+
+```java
+@Configuration
+public class RedisConfig {
+
+    // 编写自己的 RedisTemplate
+    @Bean
+    @SuppressWarnings("all")
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
+
+        // JSON序列化
+        Jackson2JsonRedisSerializer<Object> jsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+        jsonRedisSerializer.setObjectMapper(objectMapper);
+        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+
+        // Key采用String的序列化方式
+        template.setKeySerializer(stringRedisSerializer);
+        template.setHashKeySerializer(stringRedisSerializer);
+
+        // Value采用JSON的序列化方式
+        template.setValueSerializer(jsonRedisSerializer);
+        template.setHashKeySerializer(jsonRedisSerializer);
+
+        template.afterPropertiesSet();
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
+
+}
+```
+
