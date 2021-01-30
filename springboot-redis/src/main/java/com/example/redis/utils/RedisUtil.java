@@ -15,6 +15,8 @@ public class RedisUtil {
     private RedisUtil() {
     }
 
+    // ================================= common ================================
+
     /**
      * 指定缓存失效时间
      *
@@ -42,6 +44,21 @@ public class RedisUtil {
      */
     public Long getExpire(String key) {
         return redisTemplate.getExpire(key, TimeUnit.SECONDS);
+    }
+
+    /**
+     * 判断键是否存在
+     *
+     * @param key 键
+     * @return true表示存在，false表示不存在
+     */
+    public Boolean hasKey(String key) {
+        try {
+            return redisTemplate.hasKey(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Boolean.FALSE;
+        }
     }
 
 }
