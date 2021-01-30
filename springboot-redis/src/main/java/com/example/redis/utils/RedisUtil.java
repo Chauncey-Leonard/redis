@@ -3,7 +3,11 @@ package com.example.redis.utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -58,6 +62,23 @@ public class RedisUtil {
         } catch (Exception e) {
             e.printStackTrace();
             return Boolean.FALSE;
+        }
+    }
+
+    /**
+     * 删除缓存
+     *
+     * @param key 键，可以传入一个或多个
+     */
+    public void del(String... key) {
+        if (key != null && key.length > 0) {
+            if (key.length == 1) {
+                redisTemplate.delete(key[0]);
+            } else {
+                redisTemplate.delete(
+                        String.valueOf(CollectionUtils.arrayToList(key))
+                );
+            }
         }
     }
 
