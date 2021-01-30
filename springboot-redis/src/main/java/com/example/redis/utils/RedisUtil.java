@@ -94,4 +94,21 @@ public class RedisUtil {
         return key == null ? null : redisTemplate.opsForValue().get(key);
     }
 
+    /**
+     * 字符串存储缓存
+     *
+     * @param key   键
+     * @param value 值
+     * @return 存储是否成功，true成功，false失败
+     */
+    public boolean set(String key, Object value) {
+        try {
+            redisTemplate.opsForValue().set(key, value);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
