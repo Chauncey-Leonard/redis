@@ -12,6 +12,9 @@ public class RedisUtil {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    private RedisUtil() {
+    }
+
     /**
      * 指定缓存失效时间
      *
@@ -30,4 +33,15 @@ public class RedisUtil {
             return false;
         }
     }
+
+    /**
+     * 获取指定键的失效时间
+     *
+     * @param key 键
+     * @return 失效时间(秒), 返回值为0则表示永久有效
+     */
+    public Long getExpire(String key) {
+        return redisTemplate.getExpire(key, TimeUnit.SECONDS);
+    }
+
 }
