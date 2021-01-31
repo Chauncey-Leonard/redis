@@ -223,4 +223,21 @@ public class RedisUtil {
         return redisTemplate.opsForHash().entries(key);
     }
 
+    /**
+     * 保存多个键值对
+     *
+     * @param key 键
+     * @param map 键值对集合
+     * @return 存储是否成功
+     */
+    public boolean hmset(String key, Map<String, Object> map) {
+        try {
+            redisTemplate.opsForHash().putAll(key, map);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
