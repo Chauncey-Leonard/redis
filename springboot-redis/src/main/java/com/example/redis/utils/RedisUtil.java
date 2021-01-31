@@ -449,4 +449,21 @@ public class RedisUtil {
             return 0L;
         }
     }
+
+    /**
+     * 移除指定集合中的元素
+     *
+     * @param key    键
+     * @param values 移除的元素
+     * @return 移除的个数
+     */
+    public Long sRemove(String key, Object... values) {
+        try {
+            return redisTemplate.opsForSet().remove(key, values);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        }
+    }
+
 }
