@@ -434,4 +434,19 @@ public class RedisUtil {
             return 0L;
         }
     }
+
+    /**
+     * 获取指定集合中的元素个数
+     *
+     * @param key 键
+     * @return 集合的长度
+     */
+    public Long sGetSize(String key) {
+        try {
+            return redisTemplate.opsForSet().size(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        }
+    }
 }
