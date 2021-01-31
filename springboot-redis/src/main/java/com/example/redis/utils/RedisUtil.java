@@ -396,4 +396,20 @@ public class RedisUtil {
             return false;
         }
     }
+
+    /**
+     * 保存一个或多个缓存
+     *
+     * @param key    键
+     * @param values 值
+     * @return 保存成功的个数
+     */
+    public Long sSet(String key, Object... values) {
+        try {
+            return redisTemplate.opsForSet().add(key, values);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        }
+    }
 }
