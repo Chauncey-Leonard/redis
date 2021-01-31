@@ -313,4 +313,15 @@ public class RedisUtil {
         redisTemplate.opsForHash().delete(key, field);
     }
 
+    /**
+     * 判断hash表中是否存在该项值
+     *
+     * @param key   键
+     * @param field 项
+     * @return true 存在，false 不存在
+     */
+    public boolean hHasKey(String key, String field) {
+        return redisTemplate.opsForHash().hasKey(key, field);
+    }
+
 }
