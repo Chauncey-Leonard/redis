@@ -140,7 +140,7 @@ public class RedisUtil {
      * @param key 键
      * @return 修改后的值
      */
-    public Long increment(String key) {
+    public Long incr(String key) {
         return redisTemplate.opsForValue().increment(key);
     }
 
@@ -172,6 +172,31 @@ public class RedisUtil {
         }
 
         return redisTemplate.opsForValue().increment(key, delta);
+    }
+
+    /**
+     * 递减
+     *
+     * @param key 键
+     * @return 修改后的值
+     */
+    public Long decr(String key) {
+        return redisTemplate.opsForValue().decrement(key);
+    }
+
+    /**
+     * 递减
+     *
+     * @param key   键
+     * @param delta 递减因子
+     * @return 修改后的值
+     */
+    public Long decr(String key, long delta) {
+        if (delta < 0) {
+            throw new RuntimeException("递减因子必须大于0");
+        }
+
+        return redisTemplate.opsForValue().decrement(key, delta);
     }
 
 }
