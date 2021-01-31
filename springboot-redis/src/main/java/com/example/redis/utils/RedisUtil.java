@@ -348,4 +348,28 @@ public class RedisUtil {
         return redisTemplate.opsForHash().increment(key, field, value);
     }
 
+    /**
+     * hash递减
+     *
+     * @param key   键
+     * @param field 项
+     * @param value 减少的数值
+     * @return 修改后的值
+     */
+    public Double hDecr(String key, String field, double value) {
+        return redisTemplate.opsForHash().increment(key, field, -value);
+    }
+
+    /**
+     * hash递减
+     *
+     * @param key   键
+     * @param field 项
+     * @param value 减少的数值
+     * @return 修改后的值
+     */
+    public Long hDecr(String key, String field, long value) {
+        return redisTemplate.opsForHash().increment(key, field, -value);
+    }
+
 }
