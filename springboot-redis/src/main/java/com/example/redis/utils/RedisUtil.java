@@ -151,7 +151,7 @@ public class RedisUtil {
      * @param delta 增加的值
      * @return 修改后的值
      */
-    public Long increment(String key, long delta) {
+    public Long incr(String key, long delta) {
         if (delta < 0) {
             throw new RuntimeException("递增因子必须大于0");
         }
@@ -166,7 +166,7 @@ public class RedisUtil {
      * @param delta 增加的值
      * @return 修改后的值
      */
-    public Double increment(String key, double delta) {
+    public Double incr(String key, double delta) {
         if (delta < 0) {
             throw new RuntimeException("递增因子必须大于0");
         }
