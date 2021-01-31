@@ -303,4 +303,14 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * hash删除数据
+     *
+     * @param key   键
+     * @param field 项
+     */
+    public void hdel(String key, Object... field) {
+        redisTemplate.opsForHash().delete(key, field);
+    }
+
 }
