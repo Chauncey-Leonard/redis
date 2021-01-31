@@ -209,7 +209,7 @@ public class RedisUtil {
      * @param field 项
      * @return 值
      */
-    public Object hget(String key, String field) {
+    public Object hGet(String key, String field) {
         return redisTemplate.opsForHash().get(key, field);
     }
 
@@ -219,7 +219,7 @@ public class RedisUtil {
      * @param key 键
      * @return 多个键值对
      */
-    public Map<Object, Object> hmget(String key) {
+    public Map<Object, Object> hMGet(String key) {
         return redisTemplate.opsForHash().entries(key);
     }
 
@@ -230,7 +230,7 @@ public class RedisUtil {
      * @param map 键值对集合
      * @return 存储是否成功
      */
-    public boolean hmset(String key, Map<String, Object> map) {
+    public boolean hMSet(String key, Map<String, Object> map) {
         try {
             redisTemplate.opsForHash().putAll(key, map);
             return true;
@@ -248,7 +248,7 @@ public class RedisUtil {
      * @param time 过期时间，单位：秒
      * @return 保存是否成功
      */
-    public boolean hmset(String key, Map<String, Object> map, long time) {
+    public boolean hMSet(String key, Map<String, Object> map, long time) {
         try {
             redisTemplate.opsForHash().putAll(key, map);
             if (time > 0) {
@@ -270,7 +270,7 @@ public class RedisUtil {
      * @param value 值
      * @return true 成功，false 失败
      */
-    public boolean hset(String key, String field, Object value) {
+    public boolean hSet(String key, String field, Object value) {
         try {
             redisTemplate.opsForHash().put(key, field, value);
             return true;
@@ -289,7 +289,7 @@ public class RedisUtil {
      * @param time  过期时间
      * @return true 成功，false 失败
      */
-    public boolean hset(String key, String field, Object value, long time) {
+    public boolean hSet(String key, String field, Object value, long time) {
         try {
             redisTemplate.opsForHash().put(key, field, value);
             if (time > 0) {
@@ -309,7 +309,7 @@ public class RedisUtil {
      * @param key   键
      * @param field 项
      */
-    public void hdel(String key, Object... field) {
+    public void hDel(String key, Object... field) {
         redisTemplate.opsForHash().delete(key, field);
     }
 
@@ -333,6 +333,18 @@ public class RedisUtil {
      * @return 修改后的值
      */
     public Double hIncr(String key, String field, double value) {
+        return redisTemplate.opsForHash().increment(key, field, value);
+    }
+
+    /**
+     * hash递增，如果不存在，则会新建一个，并将新增的值返回
+     *
+     * @param key   键
+     * @param field 项
+     * @param value 增加的数值
+     * @return 修改后的值
+     */
+    public Long hIncr(String key, String field, long value) {
         return redisTemplate.opsForHash().increment(key, field, value);
     }
 
