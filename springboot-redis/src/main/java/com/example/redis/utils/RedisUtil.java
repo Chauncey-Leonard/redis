@@ -240,4 +240,26 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 保存多个键值对并设置过期时间
+     *
+     * @param key  键
+     * @param map  键值对
+     * @param time 过期时间，单位：秒
+     * @return 保存是否成功
+     */
+    public boolean hmset(String key, Map<String, Object> map, long time) {
+        try {
+            redisTemplate.opsForHash().putAll(key, map);
+            if (time > 0) {
+                expire(key, time);
+            }
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
