@@ -412,4 +412,26 @@ public class RedisUtil {
             return 0L;
         }
     }
+
+    /**
+     * 保存一个或多个缓存并设置过期时间
+     *
+     * @param key    键
+     * @param time   过期时间
+     * @param values 值
+     * @return 成功的个数
+     */
+    public Long sSet(String key, long time, Object... values) {
+        try {
+            Long count = redisTemplate.opsForSet().add(key, values);
+            if (time > 0) {
+                expire(key, time);
+            }
+
+            return count;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        }
+    }
 }
