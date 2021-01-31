@@ -466,4 +466,23 @@ public class RedisUtil {
         }
     }
 
+    // ================================= List ==================================
+
+    /**
+     * 获取指定区间的缓存
+     *
+     * @param key   键
+     * @param start 区间开始
+     * @param end   区间结束 0 到 -1 表示所有的值
+     * @return 指定区间缓存集合
+     */
+    public List<Object> lGet(String key, long start, long end) {
+        try {
+            return redisTemplate.opsForList().range(key, start, end);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }
