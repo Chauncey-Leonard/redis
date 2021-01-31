@@ -280,4 +280,27 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 保存键值对信息并设置过期时间
+     *
+     * @param key   键
+     * @param field 项
+     * @param value 值
+     * @param time  过期时间
+     * @return true 成功，false 失败
+     */
+    public boolean hset(String key, String field, Object value, long time) {
+        try {
+            redisTemplate.opsForHash().put(key, field, value);
+            if (time > 0) {
+                expire(key, time);
+            }
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
