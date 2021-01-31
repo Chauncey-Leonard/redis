@@ -262,4 +262,22 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * hash普通保存数据，如果不存在就创建
+     *
+     * @param key   键
+     * @param field 项
+     * @param value 值
+     * @return true 成功，false 失败
+     */
+    public boolean hset(String key, String field, Object value) {
+        try {
+            redisTemplate.opsForHash().put(key, field, value);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
