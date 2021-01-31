@@ -5,10 +5,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -372,4 +369,15 @@ public class RedisUtil {
         return redisTemplate.opsForHash().increment(key, field, -value);
     }
 
+    // ================================= Set ===================================
+
+    /**
+     * 获取指定键中的所有值
+     *
+     * @param key 键
+     * @return 值集合
+     */
+    public Set<Object> sGet(String key) {
+        return redisTemplate.opsForSet().members(key);
+    }
 }
