@@ -324,4 +324,16 @@ public class RedisUtil {
         return redisTemplate.opsForHash().hasKey(key, field);
     }
 
+    /**
+     * hash递增，如果不存在，则会新建一个，并将新增的值返回
+     *
+     * @param key   键
+     * @param field 项
+     * @param value 增加的数值
+     * @return 修改后的值
+     */
+    public Double hIncr(String key, String field, double value) {
+        return redisTemplate.opsForHash().increment(key, field, value);
+    }
+
 }
