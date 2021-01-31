@@ -199,4 +199,17 @@ public class RedisUtil {
         return redisTemplate.opsForValue().decrement(key, delta);
     }
 
+    // ================================= Hash ==================================
+
+    /**
+     * Hash获取普通键值
+     *
+     * @param key   键
+     * @param field 项
+     * @return 值
+     */
+    public Object hget(String key, String field) {
+        return redisTemplate.opsForHash().get(key, field);
+    }
+
 }
