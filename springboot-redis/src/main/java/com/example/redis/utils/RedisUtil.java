@@ -380,4 +380,20 @@ public class RedisUtil {
     public Set<Object> sGet(String key) {
         return redisTemplate.opsForSet().members(key);
     }
+
+    /**
+     * 判断指定键中是否存在
+     *
+     * @param key   键
+     * @param value 值
+     * @return true 存在，false 不存在
+     */
+    public Boolean sHasKey(String key, Object value) {
+        try {
+            return redisTemplate.opsForSet().isMember(key, value);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
