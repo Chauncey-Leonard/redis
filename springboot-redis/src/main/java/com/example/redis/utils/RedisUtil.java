@@ -7,6 +7,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -210,6 +211,16 @@ public class RedisUtil {
      */
     public Object hget(String key, String field) {
         return redisTemplate.opsForHash().get(key, field);
+    }
+
+    /**
+     * 获取指定键的所有键值对
+     *
+     * @param key 键
+     * @return 多个键值对
+     */
+    public Map<Object, Object> hmget(String key) {
+        return redisTemplate.opsForHash().entries(key);
     }
 
 }
