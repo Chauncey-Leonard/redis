@@ -533,4 +533,25 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 将list放入缓存并设置过期时间
+     *
+     * @param key   键
+     * @param value 值
+     * @param time  过期时间
+     * @return 保存是否成功
+     */
+    public boolean lPush(String key, Object value, long time) {
+        try {
+            redisTemplate.opsForList().leftPush(key, value);
+            if (time > 0) {
+                expire(key, time);
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
