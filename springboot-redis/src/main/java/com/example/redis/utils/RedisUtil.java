@@ -554,4 +554,22 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 保存多个数据
+     *
+     * @param key    键
+     * @param values 值
+     * @return 保存是否成功
+     */
+    public boolean lPush(String key, List<Object> values) {
+        try {
+            redisTemplate.opsForList().leftPushAll(key, values);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
 }
