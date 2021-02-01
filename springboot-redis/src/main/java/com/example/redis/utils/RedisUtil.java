@@ -485,4 +485,19 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 获取集合的元素个数
+     *
+     * @param key 键
+     * @return 元素个数
+     */
+    public Long lGetSize(String key) {
+        try {
+            return redisTemplate.opsForList().size(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        }
+    }
+
 }
