@@ -591,5 +591,22 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 删除一个或多个值为value的
+     *
+     * @param key   键
+     * @param count 移除的个数
+     * @param value 值
+     * @return 移除的个数
+     */
+    public Long lRemove(String key, long count, Object value) {
+        try {
+            return redisTemplate.opsForList().remove(key, count, value);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        }
+    }
+
 
 }
