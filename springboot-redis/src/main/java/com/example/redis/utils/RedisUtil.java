@@ -571,5 +571,25 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 保存多个数据,并设置过期时间
+     *
+     * @param key    键
+     * @param values 值
+     * @return 保存是否成功
+     */
+    public boolean lPush(String key, List<Object> values, long time) {
+        try {
+            redisTemplate.opsForList().leftPushAll(key, values);
+            if (time > 0) {
+                expire(key, time);
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
 }
