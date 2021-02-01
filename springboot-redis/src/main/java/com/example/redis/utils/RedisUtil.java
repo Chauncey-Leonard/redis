@@ -608,5 +608,23 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 通过下标修改值
+     *
+     * @param key   键
+     * @param index 下标
+     * @param value 新值
+     * @return 修改是否成功
+     */
+    public boolean lUpdateByIndex(String key, long index, Object value) {
+        try {
+            redisTemplate.opsForList().set(key, index, value);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
 }
