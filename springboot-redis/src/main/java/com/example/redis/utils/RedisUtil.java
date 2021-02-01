@@ -500,4 +500,20 @@ public class RedisUtil {
         }
     }
 
+    /**
+     * 通过下标获取对象
+     *
+     * @param key   键
+     * @param index 下标
+     * @return 指定下标的对象
+     */
+    public Object lGetByIndex(String key, long index) {
+        try {
+            return redisTemplate.opsForList().index(key, index);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }
