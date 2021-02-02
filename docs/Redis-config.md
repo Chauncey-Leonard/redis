@@ -38,5 +38,6 @@ pidfile /var/run/redis_6379.pid
 loglevel notice(debug | verbose | notice | warning)
 # 生成的日志文件名
 logfile ""
-# 默认数据库
+# 默认数据库数量
+databases 16
 ```
