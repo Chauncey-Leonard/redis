@@ -34,5 +34,9 @@ port 6379          # 端口
 daemonize yes
 # 如果以后台的方式运行,就需要指定一个 pid 文件
 pidfile /var/run/redis_6379.pid
-# 
+# 日志等级设置, 生产环境默认使用 notice
+loglevel notice(debug | verbose | notice | warning)
+# 生成的日志文件名
+logfile ""
+# 默认数据库
 ```
