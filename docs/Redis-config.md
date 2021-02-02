@@ -60,4 +60,7 @@ save 60 10000
 
 # 持久化如果出错了,是否还需要继续工作
 stop-writes-on-bgsave-error yes
+
+# 是否压缩 rdb 文件,默认开启
+rdbcompression yes
 ```
