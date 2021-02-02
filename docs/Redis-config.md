@@ -32,4 +32,7 @@ port 6379          # 端口
 ```bash
 # 是否开启守护模式, 默认为no
 daemonize yes
+# 如果以后台的方式运行,就需要指定一个 pid 文件
+pidfile /var/run/redis_6379.pid
+# 
 ```
