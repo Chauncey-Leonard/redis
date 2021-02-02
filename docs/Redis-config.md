@@ -27,3 +27,9 @@ protected-mode yes # 保护模式
 port 6379          # 端口
 ```
 
+#### 4、通用(GENERAL)
+
+```bash
+# 是否开启守护模式, 默认为no
+daemonize yes
+```
