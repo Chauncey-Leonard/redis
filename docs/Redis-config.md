@@ -73,3 +73,13 @@ rdbchecksum yes
 # 默认为当前目录
 dir ./
 ```
+
+#### 6、安全(SECURITY)
+
+`Redis`默认是没有密码的,我们可以在这里设置密码
+
+```bash
+# 配置文件中的设置
+requirepass 123456
+
+```
