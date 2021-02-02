@@ -62,5 +62,14 @@ save 60 10000
 stop-writes-on-bgsave-error yes
 
 # 是否压缩 rdb 文件,默认开启
+# 需要消耗一些cpu资源
 rdbcompression yes
+
+# 是否校验 rdb 文件
+# 保存 rdb 文件的时候,进行错误的检查校验
+rdbchecksum yes
+
+# rdb 文件的保存目录
+# 默认为当前目录
+dir ./
 ```
