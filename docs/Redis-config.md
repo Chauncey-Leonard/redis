@@ -22,6 +22,6 @@ include /path/to/other.conf
 ```bash
 bind 127.0.0.1 # 绑定的ip地址
 
-
+protected-mode yes # 保护模式
 ```
 
