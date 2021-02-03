@@ -104,5 +104,12 @@ maxclients 10000 # 设置能连接上redis的最大客户端
 maxmemory <bytes> # redis 配置最大的内存容量
 # 内存达到上限后的处理策略
 maxmemory-policy noeviction
+
+# 1、volatile-lru：只对设置了过期时间的key进行LRU（默认值）
+# 2、allkeys-lru：删除lru算法的key
+# 3、volatile-random：随机删除即将过期的key
+# 4、allkeys-random：随机删除
+# 5、volatitle-ttl：删除即将过期的
+# 6、noeviction：永不过期，返回错误
 ```
 
