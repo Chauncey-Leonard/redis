@@ -102,5 +102,7 @@ maxclients 10000 # 设置能连接上redis的最大客户端
 
 ```bash
 maxmemory <bytes> # redis 配置最大的内存容量
+# 内存达到上限后的处理策略
+maxmemory-policy noeviction
 ```
 
