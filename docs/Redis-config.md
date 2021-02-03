@@ -113,3 +113,17 @@ maxmemory-policy noeviction
 # 6、noeviction：永不过期，返回错误
 ```
 
+#### 9、Append Only Mode
+
+```bash
+# 默认不开启aof模式，默认的持久化方式为rdb
+# 大部分情况下，rdb完全够用
+appendonly no
+# 持久化的文件名
+appendfilename "appendonly.aof"
+
+# appendfsync always 每次修改都会进行同步，比较消耗性能
+# appendfsync everysec 每秒执行一次同步，可能会丢失数据
+# appendfsync no 不执行同步，这个时候操作系统自己同步数据，速度最快
+```
+
