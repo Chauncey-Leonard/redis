@@ -82,4 +82,25 @@ dir ./
 # 配置文件中的设置
 requirepass 123456
 
+# 通过命令行设置
+# 获取 redis 的密码
+config get requirepass
+
+# 设置密码
+config set requirepass "123456"
+# 使用密码进行登录
+auth 123456
 ```
+
+#### 7、客户端(CLIENTS)
+
+```bash
+maxclients 10000 # 设置能连接上redis的最大客户端
+```
+
+#### 8、内存管理(MEMORY MANAGEMENT)
+
+```bash
+maxmemory <bytes> # redis 配置最大的内存容量
+```
+
