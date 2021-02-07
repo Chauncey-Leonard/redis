@@ -42,3 +42,12 @@ config get dir
 将我们所有的操作都记录下来形成历史文件，恢复的时候会将这个历史文件中的命令重新执行一次。
 
 以日志的形式来记录每个写操作，将`Redis`执行过的所有指令记录下来，只许追加文件不许改写文件，`Redis`启动时会读取该文件重新构建数据，即`Redis`重启时会加载读取该文件，将记录的操作命令从新执行一遍
+
+```bash
+# 开启aof
+appendonly yes
+# 指定aof文件的名称
+appendonlyfilename "appendonly.aof"
+```
+
+`aof`默认是不开启的，我们需要手动配置，即将`appendonly`的值修改为`yes`就开启了
