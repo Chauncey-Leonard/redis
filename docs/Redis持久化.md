@@ -67,3 +67,14 @@ appendonlyfilename "appendonly.aof"
 
 - 对于相同的数据集而言，`aof`文件往往比`rdb`文件大，因此在恢复大数据集的时候效率会比`rdb`文件低
 - 根据同步策略的不同，运行效率会低于`rdb`
+
+**重写规则**
+
+```bash
+# 开启重写
+no-appendfsync-on-rewrite no
+auto-aof-rewrite-percentage 100
+# 如果aof文件大于64MB，redis会fork一个新的子进程对文件进行重写
+auto-aof-rewrite-min-size 64mb
+```
+
