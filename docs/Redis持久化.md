@@ -52,4 +52,4 @@ appendonlyfilename "appendonly.aof"
 
 `aof`默认是不开启的，我们需要手动配置，即将`appendonly`的值修改为`yes`就开启了，修改完配置后需要重启`Redis`即可生效
 
-注意：如果`.aof`文件中的内容出现错误，`Redis`无法启动成功，我们可以使用`redis-check-aof`这个工具对其进行修复：`redis-check-aof --fix`
+注意：如果`.aof`文件中的内容出现错误，`Redis`无法启动成功，我们可以使用`redis-check-aof`这个工具对其进行修复：`redis-check-aof --fix`，修复成功后可以成功启动
